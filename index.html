@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YellowBrowse</title>
+    <style>
+        body {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQeJOjbsHdeNSMULj1Djoth1rqLAeNFje7KXonV0gVPA&s=10");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1 {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQmSsiUXlA9HbM_lSgqA4dF_irbyH9rj2X-dg9RDey4A&s=10");
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 90px;
+            font-family:"comic sans MS" ;
+        }
+        .search_bar {
+            position:relative;
+            right: 2.5vw;
+            top: 1vw;
+            transform:scale(1.5);
+            transform-origin: left top;
+            width: fit-content;
+            margin: 1vw auto 0;
+        }
+    </style>
+</head>
+<body>
+   <h1 style="text-align:center">YELLLOW</h1> 
+   <div class="search_bar">
+   <form id="search_system">
+    <input type="search" id="search_bar" placeholder="Search İn YellowBrowse" required />
+    <button type="submit">Search</button>
+   </form>
+   </div>
+   <div class="YEL'S">
+
+   </div>
+   <script>
+   const form = document.getElementById("search_system");
+  const input = document.getElementById("search_bar");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const query = encodeURIComponent(input.value.trim());
+    if (!query) return;
+
+    const url = `https://www.google.com/search?q=${query}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+</script>
+</body>
+</html>
