@@ -18,9 +18,38 @@
             font-size: 90px;
             font-family:"comic sans MS" ;
         }
+        .search_bar {
+            position:relative;
+            left: 39vw;
+            top: 1vw;
+            transform:scale(1.5);
+            transform-origin: left top;
+        }
     </style>
 </head>
 <body>
    <h1 style="text-align:center">YELLLOW</h1> 
+   <div class="search_bar">
+   <form id="search_system">
+    <input type="search" id="search_bar" placeholder="Search İn YellowBrowse" required />
+    <button type="submit">Search</button>
+   </form>
+   </div>
+   <div class="YEL'S">
+
+   </div>
+   <script>
+   const form = document.getElementById("search_system");
+  const input = document.getElementById("search_bar");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const query = encodeURIComponent(input.value.trim());
+    if (!query) return;
+
+    const url = `https://www.google.com/search?q=${query}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+</script>
 </body>
 </html>
